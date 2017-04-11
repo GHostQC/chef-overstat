@@ -1,10 +1,9 @@
-# ads_role_logstashtest-cookbook
+# overstat
 
-TODO: Enter the cookbook description here.
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
+* Centos (Tested on Centos 7.2 with kitchen-test)
 
 ## Attributes
 
@@ -25,18 +24,18 @@ TODO: List your supported platforms.
 
 ## Usage
 
-### ads_role_logstashtest::default
+### overstat::default
 
-Include `ads_role_logstashtest` in your node's `run_list`:
+Include `overstat::default` in your node's `run_list`:
 
 ```json
 {
   "run_list": [
-    "recipe[ads_role_logstashtest::default]"
+    "recipe[overstat::default]"
   ]
 }
 ```
 
 ## License and Authors
 
-Author:: Automotive Data Solutions (<mathieu.renaud@adsdata.ca>)
+Author:: GHostQC (<https://github.com/GHostQC>)
