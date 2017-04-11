@@ -15,7 +15,7 @@
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['ads_role_logstashtest']['bacon']</tt></td>
+    <td><tt></tt></td>
     <td>Boolean</td>
     <td>whether to include bacon</td>
     <td><tt>true</tt></td>
