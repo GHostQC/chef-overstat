@@ -12,5 +12,6 @@ install:
 script:
   - bundle exec rubocop .
   - bundle exec foodcritic --progress -f any .
+  - bundle exec kitchen test -d always
 notifications:
  email: false
