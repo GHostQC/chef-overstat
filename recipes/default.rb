@@ -28,7 +28,7 @@ elasticsearch_configure 'elasticsearch' do
 end
 
 elasticsearch_service 'elasticsearch' do
-  action [:enable, :start]
+  action %i[enable start]
 end
 
 elasticsearch_plugin 'x-pack'
