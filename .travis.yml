@@ -9,7 +9,6 @@ rvm:
   - 2.2
 install:
   - bundle install
-  - bundle exec berks install
 script:
   - bundle exec rubocop .
   - bundle exec foodcritic --progress -f any .
