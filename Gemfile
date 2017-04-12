@@ -11,4 +11,6 @@ end
 group :test do
   gem 'foodcritic'
   gem 'rubocop'
+  gem 'kitchen-vagrant'
+  gem 'test-kitchen'
 end
