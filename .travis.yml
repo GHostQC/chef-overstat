@@ -6,9 +6,11 @@ cache:
 sudo: false
 bundler_args: --without integration --path=$PWD/vendor/bundle
 rvm:
-  - 2.2
+  - 2.4.1
 install:
   - bundle install
 script:
   - bundle exec rubocop .
   - bundle exec foodcritic --progress -f any .
+notifications:
+ email: false
