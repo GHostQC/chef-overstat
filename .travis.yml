@@ -1,0 +1,12 @@
+language: ruby
+cache:
+  directories:
+  - vendor/bundle
+  - vendor/cookbooks
+sudo: false
+bundler_args: --without integration --path=$PWD/vendor/bundle
+rvm:
+  - 2.2
+script:
+  - bundle exec rubocop .
+  - bundle exec foodcritic --progress -f any .
