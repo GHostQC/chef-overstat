@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe command('java -version | grep version') do
+describe command('java -version') do
   its(:exit_status) { should eq 0 }
 end
 
@@ -31,4 +31,3 @@ describe command('sudo /usr/share/elasticsearch/bin/elasticsearch-plugin list') 
   its(:exit_status) { should eq 0 }
   its(:stdout) { should contain('x-pack') }
 end
-

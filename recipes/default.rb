@@ -12,6 +12,7 @@ node.override['java']['oracle']['accept_oracle_download_terms'] = true
 include_recipe 'java::default'
 
 include_recipe 'elasticsearch::default'
+include_recipe 'logstash::default'
 
 elasticsearch_user 'elasticsearch'
 
@@ -21,13 +22,13 @@ user 'elasticsearch' do
 end
 
 elasticsearch_configure 'elasticsearch' do
-	configuration ({
-		'http.port' => 9200
-	})
+  configuration(
+    'http.port' => 9200
+  )
 end
 
 elasticsearch_service 'elasticsearch' do
-	action [:enable, :start]
+  action [:enable, :start]
 end
 
 elasticsearch_plugin 'x-pack'
