@@ -6,10 +6,10 @@ group :integration do
   gem 'kitchen-vagrant'
 end
 
+gem 'test-kitchen'
+
 group :test do
   gem 'foodcritic'
   gem 'rubocop'
-  gem 'kitchen-docker'
+  gem 'kitchen-dokken'
 end
-
-gem 'test-kitchen'
