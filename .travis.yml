@@ -18,6 +18,6 @@ before_script:
 script:
   - bundle exec rubocop .
   - bundle exec foodcritic --progress -f any .
-  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml chef exec bundle exec kitchen verify ${INSTANCE}
+  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml bundle exec kitchen verify ${INSTANCE}
 notifications:
  email: false
