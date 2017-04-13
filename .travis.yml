@@ -3,21 +3,14 @@ cache:
   directories:
   - vendor/bundle
   - vendor/cookbooks
-sudo: true
-services: docker
-env:
-  matrix:
-  - INSTANCE=default-centos-72
+sudo: false
 bundler_args: --without integration --path=$PWD/vendor/bundle
 rvm:
   - 2.3.1
 install:
   - bundle install
-before_script:
-  - sudo iptables -L DOCKER || sudo iptables -N DOCKER
 script:
   - bundle exec rubocop .
   - bundle exec foodcritic --progress -f any .
-  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml bundle exec kitchen verify ${INSTANCE}
-notifications:
+ notifications:
  email: false
