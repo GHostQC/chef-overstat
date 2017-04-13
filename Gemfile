@@ -4,12 +4,10 @@ group :integration do
   gem 'berkshelf'
   gem 'kitchen-transport-rsync'
   gem 'kitchen-vagrant'
+  gem 'test-kitchen'
 end
-
-gem 'test-kitchen'
 
 group :test do
   gem 'foodcritic'
   gem 'rubocop'
-  gem 'kitchen-dokken'
 end
