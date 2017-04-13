@@ -10,7 +10,7 @@ rvm:
 before_install:
   - sudo apt-get install dpkg-dev virtualbox-dkms
   - wget https://releases.hashicorp.com/vagrant/1.9.3/vagrant_1.9.3_x86_64.deb
-  - dpkg -i vagrant_1.9.3_x86_64.deb
+  - sudo dpkg -i vagrant_1.9.3_x86_64.deb
   - sudo apt-get install linux-headers-$(uname -r)
   - sudo dpkg-reconfigure virtualbox-dkms
 install:
