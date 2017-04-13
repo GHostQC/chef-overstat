@@ -3,21 +3,14 @@ cache:
   directories:
   - vendor/bundle
   - vendor/cookbooks
-sudo: true
+sudo: false
 bundler_args: --without integration --path=$PWD/vendor/bundle
 rvm:
   - 2.4.1
-before_install:
-  - sudo apt-get install dpkg-dev virtualbox-dkms
-  - wget https://releases.hashicorp.com/vagrant/1.9.3/vagrant_1.9.3_x86_64.deb
-  - sudo dpkg -i vagrant_1.9.3_x86_64.deb
-  - sudo apt-get install linux-headers-$(uname -r)
-  - sudo dpkg-reconfigure virtualbox-dkms
 install:
   - bundle install
 script:
   - bundle exec rubocop .
   - bundle exec foodcritic --progress -f any .
-  - bundle exec kitchen test -d always
 notifications:
  email: false
