@@ -3,10 +3,16 @@ cache:
   directories:
   - vendor/bundle
   - vendor/cookbooks
-sudo: false
+sudo: true
 bundler_args: --without integration --path=$PWD/vendor/bundle
 rvm:
   - 2.4.1
+before_install:
+  - sudo apt-get install dpkg-dev virtualbox-dkms
+  - wget http://files.vagrantup.com/packages/0219bb87725aac28a97c0e924c310cc97831fd9d/vagrant_1.2.4_i686.deb
+  - dpkg -i vagrant_1.2.4_i686.deb
+  - sudo apt-get install linux-headers-$(uname -r)
+  - sudo dpkg-reconfigure virtualbox-dkms
 install:
   - bundle install
 script:
