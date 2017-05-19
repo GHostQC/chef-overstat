@@ -47,4 +47,3 @@ end
 describe file('/opt/logstash/default/etc/conf.d/overstat-input-output') do
   it { should be_file }
 end
-

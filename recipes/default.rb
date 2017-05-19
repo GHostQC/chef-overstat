@@ -44,7 +44,6 @@ elasticsearch_plugin 'x-pack'
 
 # Logstash
 
-
 logstash_instance 'default' do
   checksum '7f62a03ddc3972e33c343e982ada1796b18284f43ed9c0089a2efee78b239583'
   version '2.3.4'
@@ -56,7 +55,7 @@ logstash_plugins 'logstash-input-http_poller'
 logstash_config 'overstat' do
   instance 'default'
   templates 'overstat-input-output' => 'overstat-config.erb'
-  templates_cookbook 'overstat_elk'  
+  templates_cookbook 'overstat_elk'
 end
 
 logstash_service 'default' do
