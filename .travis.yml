@@ -3,12 +3,16 @@ cache:
   directories:
   - vendor/bundle
   - vendor/cookbooks
-sudo: false
+sudo: true
 bundler_args: --without integration --path=$PWD/vendor/bundle
 rvm:
-  - 2.4.1
+  - 2.0.0
+  - 2.1.0
+  - 2.2.0
 install:
   - bundle install
+before_script:
+        - source <(curl -sL https://raw.githubusercontent.com/zuazo/kitchen-in-travis/0.5.0/scripts/start_docker.sh)
 script:
   - bundle exec rubocop .
   - bundle exec foodcritic --progress -f any .

@@ -1,85 +1,72 @@
 # Logstash config that use http_poller plugins to get Overwatch's (Blizzard newest video game) data from an Unofficial API (Official isn't released yet)
-#
 
 input {
-	http_poller {
-		urls => {
-			GhostProfile => {
-				method => get
-				url => 'https://api.lootboox.eu./pc/us/GhostQC-1452/profile'
-				headers => {
-					Accept => "application/json"
-				}
-			}
-			iNoVeProfile => {
-				method => get
-				url => 'https://api.lootboox.eu./pc/us/iNoVe666-1900/profile'
-				headers => {
-					Accept => "application/json"
-				}
-			}
-			Mhunter92Profile => {
-				method => get
-				url => 'https://api.lootboox.eu./pc/us/Mhunter92-1342/profile'
-				headers => {
-					Accept => "application/json"
-				}
-			}
-			CubixProfile => {
-				method => get
-				url => 'https://api.lootboox.eu./pc/us/cubix5-1227/profile'
-				headers => {
-					Accept => "application/json"
-				}
-			}
-			AshuraProfile => {
-				method => get
-				url => 'https://api.lootboox.eu./pc/us/Ashura-1326/profile'
-				headers => {
-					Accept => "application/json"
-				}
-			}
-			ScreamsMcGeeProfile => {
-				method => get
-				url => 'https://api.lootboox.eu./pc/us/ScreamsMcGee-1638/profile'
-				headers => {
-					Accept => "application/json"
-				}
-			}
-			DrummerProfile => {
-				method => get
-				url => 'https://api.lootboox.eu./pc/us/Drummer611-1516/profile'
-				headers => {
-					Accept => "application/json"
-				}
-			}
-			AeriothProfile => {
-				method => get
-				url => 'https://api.lootboox.eu./pc/us/A3R10TH-1173/profile'
-				headers => {
-					Accept => "application/json"
-				}
-			}
-		
-		}
-		request_timeout => 60
-		interval => 120
-		codec => "json"
-	
-		# A hash of request metadata info (timing, response headers, etc.) will be sent here
-		metadata_target => "http_poller_metadata"
+  http_poller {
+    urls => {
+      GhostProfile => {
+        method => get
+	url => 'https://api.lootboox.eu./pc/us/GhostQC-1452/profile'
+	headers => {
+	  Accept => "application/json"
 	}
+      }
+      iNoVeProfile => {
+        method => get
+	url => 'https://api.lootboox.eu./pc/us/iNoVe666-1900/profile'
+	headers => {
+	  Accept => "application/json"
+	}
+      }
+      Mhunter92Profile => {
+        method => get
+	url => 'https://api.lootboox.eu./pc/us/Mhunter92-1342/profile'
+	headers => {
+	  Accept => "application/json"
+	}
+      }
+      CubixProfile => {
+        method => get
+	url => 'https://api.lootboox.eu./pc/us/cubix5-1227/profile'
+	headers => {
+	  Accept => "application/json"
+	}
+      }
+      AshuraProfile => {
+        method => get
+	url => 'https://api.lootboox.eu./pc/us/Ashura-1326/profile'
+	headers => {
+	  Accept => "application/json"
+	}
+      }
+      ScreamsMcGeeProfile => {
+        method => get
+	url => 'https://api.lootboox.eu./pc/us/ScreamsMcGee-1638/profile'
+	headers => {
+	  Accept => "application/json"
+	}
+      }
+      DrummerProfile => {
+        method => get
+	url => 'https://api.lootboox.eu./pc/us/Drummer611-1516/profile'
+	headers => {
+	  Accept => "application/json"
+	}
+      }
+    }
+    request_timeout => 60
+    interval => 120
+    codec => 'json'
+    # A hash of request metadata info (timing, response headers, etc.) will be sent here
+    metadata_target => 'http_poller_metadata'
+  }
 }
 
 filter {
 }
 
 output {
-	elasticsearch {
-		host => 'localhost:9200'
-		index => 'overstat'
-	}
-	stdout {
-		codec => rubydebug
-	}
+  elasticsearch {
+    hosts => 'localhost:9200'
+    index => 'overstat'
+  }
 }

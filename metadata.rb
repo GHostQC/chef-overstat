@@ -15,7 +15,7 @@ depends 'logstash'
   supports os
 end
 
-%w[poise-python cron yum-epel yum java elasticsearch kibana5 logstash].each do |ckbk|
+%w[firewall runit poise-python cron yum-epel yum java elasticsearch kibana5 logstash].each do |ckbk|
   depends ckbk
 end
 
