@@ -1,11 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'kitchen-vagrant'
-gem 'test-kitchen'
-
 group :integration do
   gem 'berkshelf'
   gem 'kitchen-transport-rsync'
+  gem 'kitchen-vagrant'
+  gem 'test-kitchen'
 end
 
 group :test do
